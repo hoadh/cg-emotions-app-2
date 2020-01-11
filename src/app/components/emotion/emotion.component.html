@@ -1,0 +1,2 @@
+<img class="img-fluid emotion-image tada" [src]="emotion.imageLink" (mouseover)="showText()" (mouseout)="hideText()" />
+<div *ngIf="isTextShow" class="h5 mt-3 font-weight-normal text-center">{{ emotion.description | lowercase }}</div>

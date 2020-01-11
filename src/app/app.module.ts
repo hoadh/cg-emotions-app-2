@@ -16,6 +16,11 @@ import { HomeContentComponent } from './components/home-content/home-content.com
 import { LoadingComponent } from './components/loading/loading.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { TodayComponent } from './pages/today/today.component';
+import { EmotionComponent } from './components/emotion/emotion.component';
+import { HeaderComponent } from './components/header/header.component';
+import { DetailComponent } from './pages/detail/detail.component';
+import { ThankYouComponent } from './pages/thank-you/thank-you.component';
 
 export function hljsLanguages() {
   return [{ name: 'json', func: json }];
@@ -30,7 +35,12 @@ export function hljsLanguages() {
     FooterComponent,
     HeroComponent,
     HomeContentComponent,
-    LoadingComponent
+    LoadingComponent,
+    TodayComponent,
+    EmotionComponent,
+    HeaderComponent,
+    DetailComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,

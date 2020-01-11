@@ -1,0 +1,24 @@
+<app-header></app-header>
+
+<div class="container">
+
+  <form class="center-block">
+
+    <div class="text-center mb-4" *ngIf="emotion">
+      <img class="mb-4 animated infinite pulse delay-1s" [src]="emotion.imageLink" [width]="100" [height]="100" />
+      <h1 class="h3 mb-3 font-weight-normal">{{ emotion.description }}</h1>
+      <p>Bạn muốn gởi lời nhắn nhủ cho mọi người?<br><code>Hãy điền thông điệp vào ô bên dưới nhé!</code> Hoặc gởi email cho <a href="mailto:code@codegym.vn">CodeGym.</a></p>
+      <textarea name="noteContent" class="form-control" rows="3" [(ngModel)]="noteContent"></textarea>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <button class="btn btn-lg btn-secondary btn-block mb-4" type="button" routerLink="/today"><i class="fa fa-angle-left" ></i></button>
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <button class="btn btn-lg btn-primary btn-block mb-4" type="button" (click)="save()">Lưu nhẹ!</button>
+      </div>
+    </div>
+  </form>
+
+</div>

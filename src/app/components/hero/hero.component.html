@@ -6,7 +6,7 @@
     Nơi ghi lại cảm xúc mỗi ngày khi học tập tại CodeGym!
     <br/><br/>
     <!-- <a href="https://angular.io">Cập nhật ngay bạn ơi!</a> -->
-    <button type="button" class="btn btn-primary btn-lg animated shake delay-4s" *ngIf="auth.loggedIn === true">Cập nhật ngay bạn ơi!</button>
+    <button type="button" class="btn btn-primary btn-lg animated shake delay-4s" *ngIf="auth.loggedIn === true" routerLink="/today">Cập nhật ngay bạn ơi!</button>
     <button type="button" class="btn btn-primary btn-lg animated shake delay-4s" *ngIf="auth.loggedIn === false">
       Đăng nhập
     </button>

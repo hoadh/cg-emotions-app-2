@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { HttpResult } from '../models/http-result';
 import { Emotion } from '../models/emotion';
+import {environment} from '../../environments/environment';
 const apiUrl = environment.apiUrl;
 
 enum EmotionPosition {
@@ -58,7 +58,6 @@ export class EmotionService {
       },
       user: data.user
     };
-    console.log('updateToday', emotion);
     return this.httpClient.post<HttpResult<any>>(apiUrl + 'today', emotion);
   }
 

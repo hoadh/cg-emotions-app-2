@@ -1,0 +1,13 @@
+.img-fluid {
+  max-width: 100px;
+}
+
+.img-fluid:hover {
+  max-width: 120px;
+}
+
+.emotion-image:hover {
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}
