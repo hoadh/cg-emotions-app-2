@@ -5,4 +5,7 @@ export interface Emotion {
   description?: string;
   note?: any;
   user?: any;
+  createdAt?: Date;
+  updatedAt?: Date;
+  history?: any[];
 }

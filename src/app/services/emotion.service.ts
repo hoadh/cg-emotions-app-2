@@ -74,4 +74,14 @@ export class EmotionService {
       case 'anger': return this.emotions[EmotionPosition.ANGER].imageLink;
     }
   }
+
+  getEmotionDescription(emotion: string): string {
+    switch (emotion) {
+      case 'happy': return this.emotions[EmotionPosition.HAPPY].description;
+      case 'good': return this.emotions[EmotionPosition.GOOD].description;
+      case 'normal': return this.emotions[EmotionPosition.NORMAL].description;
+      case 'bad': return this.emotions[EmotionPosition.BAD].description;
+      case 'anger': return this.emotions[EmotionPosition.ANGER].description;
+    }
+  }
 }
