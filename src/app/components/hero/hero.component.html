@@ -1,0 +1,15 @@
+<div class="text-center hero my-5">
+  <img class="mb-3 app-logo" src="/assets/emotions/happy.png" width="100" height="100" alt="CG Emotions logo" />
+  <h1 class="mb-4">Hôm nay bạn thế nào?</h1>
+  <br/>
+  <p class="lead">
+    Nơi ghi lại cảm xúc mỗi ngày khi học tập tại CodeGym!
+    <br/><br/>
+    <!-- <a href="https://angular.io">Cập nhật ngay bạn ơi!</a> -->
+    <button type="button" class="btn btn-primary btn-lg animated shake delay-4s" *ngIf="auth.loggedIn === true">Cập nhật ngay bạn ơi!</button>
+    <button type="button" class="btn btn-primary btn-lg animated shake delay-4s" *ngIf="auth.loggedIn === false">
+      Đăng nhập
+    </button>
+    </p>
+  </div>
+
