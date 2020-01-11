@@ -17,13 +17,21 @@
   <div class="row" *ngIf="profileJson">
     <ul class="list-unstyled mb-3 mr-3 ml-3">
       <li class="media my-4" *ngFor="let emotion of emotions">
-        <img [src]="getImg(emotion.emotion)" height="64" width="64" class="mr-3" alt="...">
+        <img [src]="getImg(emotion.emotion)" height="64" width="64" class="mr-3" [alt]="emotion.emotion">
         <div class="media-body">
-          <h6 class="mt-0 mb-1">{{ getDescription(emotion.emotion) }} </h6>
+          <h6 class="mt-0 mb-1">{{ getDescription(emotion.emotion) }}</h6>
           <p>Cập nhật lúc: {{emotion.updatedAt | date : 'd/M/yyyy, h:mm a' : '+0700'}}</p>
           <q>{{ (emotion.note && emotion.note.content !== '') ? emotion.note.content : '...' }}</q>
           <ng-template *ngIf="emotion.history && emotion.history.length > 0">
-            {{ emotion.history | json }}
+            <div class="media mt-3" *ngFor="let subemotion of emotion.history">
+              <a class="pr-3" href="#">
+                <img [src]="getImg(subemotion.emotion)" [alt]="subemotion.emotion">
+              </a>
+              <div class="media-body">
+                <h6 class="mt-0">{{ getDescription(subemotion.emotion) }}</h6>
+                <q>{{ (subemotion.note && subemotion.note.content !== '') ? subemotion.note.content : '...' }}</q>
+              </div>
+            </div>
           </ng-template>
         </div>
       </li>

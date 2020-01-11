@@ -7,5 +7,5 @@ export interface Emotion {
   user?: any;
   createdAt?: Date;
   updatedAt?: Date;
-  history?: any[];
+  history?: Emotion[];
 }
