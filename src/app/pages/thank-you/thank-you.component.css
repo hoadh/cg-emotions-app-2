@@ -2,3 +2,31 @@
   width: 100%;
   max-width: 330px;
 }
+
+blockquote {
+  color: #2c3e50;
+  font-size: 18px;
+  line-height: 100%;
+  position: relative;
+  font-family: Georgia, serif;
+  /*width: 300px;*/
+  margin: 10% auto;
+}
+blockquote:before {
+  content: '\201C';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  font-family: Arial, sans-serif;
+  font-size: 82px;
+  font-style: normal;
+}
+blockquote:after {
+  content: '\201C';
+  position: absolute;
+  bottom: -60px;
+  right: 0;
+  font-family: Arial, sans-serif;
+  font-size: 82px;
+  font-style: normal;
+}
