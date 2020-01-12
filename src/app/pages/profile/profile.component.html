@@ -20,19 +20,19 @@
         <img [src]="getImg(emotion.emotion)" height="64" width="64" class="mr-3" [alt]="emotion.emotion">
         <div class="media-body">
           <h6 class="mt-0 mb-1">{{ getDescription(emotion.emotion) }}</h6>
-          <p>Cập nhật lúc: {{emotion.updatedAt | date : 'd/M/yyyy, h:mm a' : '+0700'}}</p>
+          <p><i class="far fa-clock"></i> {{emotion.updatedAt | date : 'd/M/yyyy, h:mm a' : '+0700'}}</p>
           <q>{{ (emotion.note && emotion.note.content !== '') ? emotion.note.content : '...' }}</q>
-          <ng-template *ngIf="emotion.history && emotion.history.length > 0">
-            <div class="media mt-3" *ngFor="let subemotion of emotion.history">
-              <a class="pr-3" href="#">
-                <img [src]="getImg(subemotion.emotion)" [alt]="subemotion.emotion">
-              </a>
-              <div class="media-body">
-                <h6 class="mt-0">{{ getDescription(subemotion.emotion) }}</h6>
-                <q>{{ (subemotion.note && subemotion.note.content !== '') ? subemotion.note.content : '...' }}</q>
-              </div>
+          <p><i>Cảm xúc khác trong ngày:</i></p>
+          <div class="media mt-3" *ngFor="let subemotion of emotion.history">
+            <a class="pr-3" href="#">
+              <img [src]="getImg(subemotion.emotion)" height="64" width="64" class="mr-3" [alt]="subemotion.emotion">
+            </a>
+            <div class="media-body">
+              <h6 class="mt-0">{{ getDescription(subemotion.emotion) }}</h6>
+              <p><i class="far fa-clock"></i> {{subemotion.updatedAt | date : 'd/M/yyyy, h:mm a' : '+0700'}}</p>
+              <q>{{ (subemotion.note && subemotion.note.content !== '') ? subemotion.note.content : '...' }}</q>
             </div>
-          </ng-template>
+          </div>
         </div>
       </li>
     </ul>
