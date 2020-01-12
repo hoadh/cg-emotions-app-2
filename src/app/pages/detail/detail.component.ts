@@ -16,6 +16,7 @@ export class DetailComponent implements OnInit {
   emotion: Emotion;
   noteContent: string;
   user: any;
+  isLoading = false;
   constructor(
     private auth: AuthService,
     private messageService: MessageService,
@@ -40,6 +41,7 @@ export class DetailComponent implements OnInit {
 
   save() {
     // just accept save emotion if user is logged in
+    this.isLoading = true;
     if (this.user) {
       this.emotionService.updateToday({
         emotion: this.emotion,
@@ -47,10 +49,12 @@ export class DetailComponent implements OnInit {
         user: this.user
       })
         .subscribe( result => {
+          this.isLoading = false;
           this.trackingService.track('Update Emotion', { user: this.user.userId, emotion: this.emotion.name, status: 'ok' });
           this.trackingService.track('Navigate', { from: '/detail', to: '/thank-you' });
           this.router.navigate(['/thank-you']);
         }, error => {
+          this.isLoading = false;
           this.trackingService.track('Update Emotion', { user: this.user.userId, emotion: this.emotion.name, status: 'error', error });
         });
     }

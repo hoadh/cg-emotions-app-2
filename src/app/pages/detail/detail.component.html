@@ -16,7 +16,12 @@
         <button class="btn btn-lg btn-secondary btn-block mb-4" type="button" routerLink="/today"><i class="fa fa-angle-left" ></i></button>
       </div>
       <div class="col-xs-12 col-md-8">
-        <button class="btn btn-lg btn-primary btn-block mb-4" type="button" (click)="save()">Lưu nhẹ!</button>
+        <button class="btn btn-lg btn-primary btn-block mb-4" type="button" (click)="save()" [disabled]="isLoading">
+          <div *ngIf="isLoading" class="spinner-border text-light" role="status">
+            <span class="sr-only">Đợi một tí bạn nhé...</span>
+          </div>
+          {{ (!isLoading) ? 'Lưu nhẹ!' : '' }}
+        </button>
       </div>
     </div>
   </form>
