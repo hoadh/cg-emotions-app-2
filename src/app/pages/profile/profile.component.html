@@ -24,7 +24,7 @@
           <q>{{ (emotion.note && emotion.note.content !== '') ? emotion.note.content : '...' }}</q>
           <p><i>Cảm xúc khác trong ngày:</i></p>
           <div class="media mt-3" *ngFor="let subemotion of emotion.history">
-            <a class="pr-3" href="#">
+            <a class="pr-3">
               <img [src]="getImg(subemotion.emotion)" height="64" width="64" class="mr-3" [alt]="subemotion.emotion">
             </a>
             <div class="media-body">
