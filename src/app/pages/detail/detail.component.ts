@@ -51,7 +51,7 @@ export class DetailComponent implements OnInit {
         .subscribe( result => {
           this.isLoading = false;
           this.trackingService.track('Update Emotion', { user: this.user.userId, emotion: this.emotion.name, status: 'ok' });
-          this.trackingService.track('Navigate', { from: '/detail', to: '/thank-you' });
+          // this.trackingService.track('Navigate', { from: '/detail', to: '/thank-you' });
           this.router.navigate(['/thank-you']);
         }, error => {
           this.isLoading = false;

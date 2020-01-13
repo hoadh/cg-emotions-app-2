@@ -58,7 +58,7 @@ export class TodayComponent implements OnInit {
     this.trackingService.track('Select Emotion', {
       emotion: emotion.name
     });
-    this.trackingService.track('Navigate', { from: '/list', to: '/detail' });
+    // this.trackingService.track('Navigate', { from: '/list', to: '/detail' });
     this.router.navigate(['/detail']);
   }
 
