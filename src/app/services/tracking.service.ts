@@ -1,13 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import {Profile} from '../models/profile';
 
 declare var mixpanel;
-
-interface Profile {
-  email: string;
-  userId: string;
-  name?: string;
-}
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +24,7 @@ export class TrackingService {
     if (this.isProd) {
       mixpanel.people.set({
         $email: profile.email,
+        $avatar: profile.picture,
         USER_ID: profile.userId,
         name: profile.name
       });
