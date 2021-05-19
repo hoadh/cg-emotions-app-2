@@ -1,3 +1,10 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar-light.bg-light .nav-link {
   color: #041433;
 }

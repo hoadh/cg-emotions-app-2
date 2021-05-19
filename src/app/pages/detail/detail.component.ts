@@ -26,7 +26,7 @@ export class DetailComponent implements OnInit {
 
   ngOnInit() {
     this.emotion = this.messageService.getEmotion();
-    this.getProfile();
+    // this.getProfile();
   }
 
   getProfile() {
@@ -42,22 +42,20 @@ export class DetailComponent implements OnInit {
   save() {
     // just accept save emotion if user is logged in
     this.isLoading = true;
-    if (this.user) {
-      this.emotionService.updateToday({
-        emotion: this.emotion,
-        note: this.noteContent,
-        user: this.user
-      })
-        .subscribe( result => {
-          this.isLoading = false;
-          this.trackingService.track('Update Emotion', { user: this.user.userId, emotion: this.emotion.name, status: 'ok' });
-          // this.trackingService.track('Navigate', { from: '/detail', to: '/thank-you' });
-          this.router.navigate(['/thank-you']);
-        }, error => {
-          this.isLoading = false;
-          this.trackingService.track('Update Emotion', { user: this.user.userId, emotion: this.emotion.name, status: 'error', error });
-        });
-    }
+    this.emotionService.updateTodayAnonymous({
+      emotion: this.emotion,
+      note: this.noteContent,
+      user: {}
+    })
+      .subscribe( result => {
+        this.isLoading = false;
+        this.trackingService.track('Update Emotion', { emotion: this.emotion.name, status: 'ok' });
+        // this.trackingService.track('Navigate', { from: '/detail', to: '/thank-you' });
+        this.router.navigate(['/thank-you']);
+      }, error => {
+        this.isLoading = false;
+        this.trackingService.track('Update Emotion', { emotion: this.emotion.name, status: 'error', error });
+  });
   }
 
 }

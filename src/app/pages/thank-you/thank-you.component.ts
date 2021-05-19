@@ -25,7 +25,6 @@ export class ThankYouComponent implements OnInit {
   }
 
   back() {
-    // this.trackingService.track('Navigate', { from: '/thank-you', to: '/' });
     this.router.navigate(['/']);
   }
 

@@ -1,14 +1,8 @@
-<app-header></app-header>
-
 <div class="container">
 
-  <div class="row">
-    <div class="col-sm-1 col-xs-0"></div>
-    <div *ngFor="let emotion of emotions" class="col-sm-2 col-xs-12 mt-3">
-      <div class="d-flex justify-content-center">
-        <app-emotion [emotion]="emotion" (click)="goToDetail(emotion)" ></app-emotion>
-      </div>
+  <div class="h-100 row align-items-center">
+    <div *ngFor="let emotion of emotions" class="col">
+      <app-emotion [emotion]="emotion" (click)="goToDetail(emotion)" ></app-emotion>
     </div>
-    <div class="col-sm-1 col-xs-0"></div>
   </div>
 </div>

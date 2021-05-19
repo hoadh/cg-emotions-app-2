@@ -61,6 +61,19 @@ export class EmotionService {
     return this.httpClient.post<HttpResult<any>>(apiUrl + 'today', emotion);
   }
 
+  updateTodayAnonymous(data: any): Observable<HttpResult<any>> {
+    const emotion = {
+      emotion: data.emotion.name,
+      userId: data.user.userId,
+      note: {
+        content: data.note,
+        isPublic: true
+      },
+      user: data.user
+    };
+    return this.httpClient.post<HttpResult<any>>(apiUrl + 'today-anonymous', emotion);
+  }
+
   getHistory(userId: string): Observable<HttpResult<Emotion[]>> {
     return this.httpClient.get<HttpResult<Emotion[]>>(apiUrl + 'history?userId=' + userId);
   }
