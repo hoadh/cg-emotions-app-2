@@ -24,8 +24,8 @@ export class ThankYouComponent implements OnInit {
     });
   }
 
-  back() {
-    this.router.navigate(['/']);
+  toDashboard() {
+    this.router.navigate(['http://dashboard.happiness.codegym.vn/']);
   }
 
 }
