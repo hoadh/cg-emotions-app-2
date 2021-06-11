@@ -11,6 +11,7 @@ import {QuoteService} from '../../services/quote.service';
 })
 export class ThankYouComponent implements OnInit {
   quote: any;
+  isLoading = false;
 
   constructor(
     public auth: AuthService,
@@ -19,9 +20,16 @@ export class ThankYouComponent implements OnInit {
     private trackingService: TrackingService) {}
 
   ngOnInit() {
-    this.quoteService.random().subscribe( quote => {
-      this.quote = quote;
-    });
+    this.isLoading = true;
+    this.quoteService.random().subscribe(
+      quote => {
+        this.quote = quote;
+        this.isLoading = false;
+      },
+      error => {
+        console.log("Error after loading quote", error);
+        this.isLoading = false;
+      });
   }
 
   toDashboard() {
