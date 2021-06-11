@@ -1,7 +1,7 @@
 <div class="container cg-container">
 
   <div class="h-100 row align-items-center">
-    <div *ngFor="let emotion of emotions" class="col">
+    <div *ngFor="let emotion of emotions" class="col text-center">
       <app-emotion [emotion]="emotion" (click)="goToDetail(emotion)" ></app-emotion>
     </div>
   </div>
