@@ -25,7 +25,7 @@ export class ThankYouComponent implements OnInit {
   }
 
   toDashboard() {
-    this.router.navigate(['http://dashboard.happiness.codegym.vn/']);
+    window.location.href = 'http://dashboard.happiness.codegym.vn/';
   }
 
 }
